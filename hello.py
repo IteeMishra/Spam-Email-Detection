@@ -11,6 +11,13 @@ import streamlit as st
 # Loading the data from csv file to a pandas DataFrame
 mail_data = pd.read_csv('mail_data.csv')
 
+st.set_page_config(
+    page_title="Spam Email Detection",  # This is the title that will appear in the browser tab
+            # Optional: You can set a custom favicon
+    layout="wide"                     # Optional: Set layout to "wide" or "centered"
+)
+
+
 # Replacing all null values with a null string
 mail_data2 = mail_data.where((pd.notnull(mail_data)), '')
 
